@@ -1,0 +1,313 @@
+.contacts {
+    background-color: $background;
+    position: relative;
+    z-index: 1;
+
+    &__title {
+        margin-bottom: 32px;
+        white-space: nowrap;
+    }
+
+    &__content {
+        padding: 0 6.25%;
+    }
+
+    &__photo {
+        transform: skewX(-9deg) translate(7px,0);
+        overflow: hidden;
+        width: 92px;
+        height: 102px;
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 25px;
+        box-sizing: border-box;
+    }
+    
+    &__img {
+        transform:  skewX(9deg) ;
+        width: 100%;
+        height: 100%;
+        
+        img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%) scale(1.05);
+            min-width: 100%;
+            min-height: 100%;
+            height: 100%;
+            width: auto;
+        }
+    }
+
+    &__manager {
+        margin-bottom: 20px;
+    }
+
+    &__name {
+        display: inline-block;
+        vertical-align: top;
+        max-width: 163px;
+
+        span {
+            display: block;
+            font-size: 20px;
+            line-height: 25px;
+            font-family: boldItalic;
+            margin-bottom: 26px;
+        }
+
+        p {
+            font-size: 12px;
+            line-height: 14px;
+        }
+    }
+
+    &__block {
+        //max-width: 280px;
+
+        span {
+            font-size: 12px;
+            line-height: 17px;
+            font-family: light;
+            color: rgba(#fff,0.4);
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        a,p {
+            font-size: 16px;
+            line-height: 18px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        &--mail {
+            margin-bottom: 20px;
+        }
+
+        &--half {
+            display: inline-block;
+            vertical-align: top;
+
+            & + .contacts__block--half {
+                margin-left: 19px;
+            }
+        }
+
+        &--address {
+            margin-top: 16px;
+            margin-bottom: 24px;
+        }
+    }
+
+    &__link {
+
+        & + .contacts__link {
+            margin-left: 10px;
+        }
+
+        &:before {
+            font-family: icon;
+            font-size: 16px;
+        }
+
+        &--whats-app {
+            &:before {
+                content: '\e901';
+            }
+        }
+
+        &--viber {
+            &:before {
+                content: '\e902';
+            }
+        }
+
+        &--telegram {
+            &:before {
+                content: '\e903';
+            }
+        }
+    }
+
+    &__location {
+        height: 70vw;
+        width: 100%;
+        max-height: 313px;
+    }
+
+    &__map,&__wrapper {
+        width: 100%;
+        height: 100%;
+    }
+
+    @media (min-width: 650px) {
+        overflow: hidden;
+        position: relative;
+        min-height: 428px;
+
+        &__title {
+            padding: 0;
+            margin-bottom: 30px;
+        }
+
+        &__location {
+            position: absolute;
+            left: 400px;
+            top: 80px;
+            width: calc(100% - 370px);
+            height: 48vw;
+            max-height: 425px;
+        }
+
+        &__photo {
+            width: 100px;
+            height: 110px;
+            margin-right: 20px;
+        }
+
+        &__manager {
+            margin-bottom: 8px;
+        }
+
+        &__name {
+            max-width: 191px;
+
+            span {
+                font-size: 28px;
+                line-height: 32px;
+                margin-bottom: 16px;
+            }
+
+            p {
+                font-size: 16px;
+                line-height: 18px;
+            }
+        }
+
+        &__block {
+
+            &--address {
+                max-width: 269px;
+                margin-top: 20px;
+            }
+        }
+
+        &__map {
+            transform: skewX(-9deg);
+            overflow: hidden;
+
+
+            .map-view {
+
+                & > div {
+                    transform: skewX(9deg);
+                }
+
+                .gm-style-pbc {
+                    left: auto !important;
+                    right:0 !important;
+                    width: 106% !important;
+                }
+
+                .gm-style {
+                    &:first-child {
+                        left: auto !important;
+                        right:0 !important;
+                        width: 106% !important;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (min-width: 1200px) {
+        min-height: toRem(425);
+
+        &__title {
+            margin-bottom: toRem(48);
+        }
+
+        &__location {
+            left: toRem(585);
+            top: toRem(4);
+            width: calc(100% - 45.41667rem);
+            height: 100%;
+            max-height: none;
+        }
+
+        &__photo {
+            transform: translate(toRem(7),0) skewX(-9deg);
+            width: toRem(92);
+            height: toRem(102);
+            margin-right: toRem(40);
+        }
+
+        &__manager {
+            margin-bottom: toRem(24);
+        }
+
+        &__name {
+            max-width: toRem(269);
+            span {
+                font-size: toRem(32);
+                line-height: toRem(32);
+                margin-bottom: toRem(16);
+            }
+
+            p {
+                font-size: toRem(16);
+                line-height: toRem(18);
+            }
+        }
+
+        &__block {
+
+            span {
+                font-size: toRem(12);
+                line-height: toRem(17);
+                margin-bottom: toRem(10);
+            }
+
+            a,p {
+                font-size: toRem(16);
+                line-height: toRem(18);
+            }
+
+            &--mail {
+                margin-bottom: toRem(20);
+            }
+
+            &--half {
+
+                & + .contacts__block--half {
+                    margin-left: toRem(24);
+                }
+            }
+
+            &--address {
+                max-width: toRem(269);
+                margin-top: toRem(24);
+            }
+        }
+
+        &__link {
+
+            & + .contacts__link {
+                margin-left: toRem(10);
+            }
+
+            &:before {
+                font-size: toRem(16);
+            }
+
+        }
+    }
+
+    @media (max-width: 649px) {
+        &__container {
+            padding: 0;
+        }
+    }
+}

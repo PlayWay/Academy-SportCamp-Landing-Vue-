@@ -1,0 +1,47 @@
+.button {
+
+    &--yellow {
+        transition: .3s ease;
+        transition-property: background-color,border-color;
+
+        &:active {
+            background-color: #FFA800;
+            border-color: #FFA800;
+        }
+    }
+
+    &--transparent {
+        transition: border-color .3s ease;
+
+        &:active {
+            border-color: #FFA800;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        &--yellow {
+            &:hover {
+                background-color: #FFEA8E;
+                border-color: #FFEA8E;
+            }
+        }
+
+        &--transparent {
+            &:hover {
+                border-color: #FFEA8E;
+            }
+        }
+    }
+}
+
+.tabs {
+
+    &__item {
+        transition: color .3s ease;
+    }
+
+    &__active {
+        transition: .3s ease;
+        transition-property: left,width;
+    }
+}

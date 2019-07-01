@@ -1,0 +1,137 @@
+.training {
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 10px;
+    background: url('/public/media/images/training-bg_mobile.png') 0 100px no-repeat,
+        url('/public/media/images/training-bg_mobile2.png') 0 0 no-repeat;
+    background-size: 100%;
+
+    &:before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(19, 19, 19, 0) 83.96%, #131313 100%);
+    }
+
+    &__background {
+        display: none;
+    }
+
+    &__wrapper {
+        position: relative;
+        z-index: 2;
+    }
+
+    &__img {
+
+        &--dust {
+            display: none;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__title {
+        margin-bottom: 105px;
+        text-transform: uppercase;
+    }
+
+    &__info {
+        font-size: 16px;
+        line-height: 21px;
+        margin-bottom: 24px;
+        max-width: 306px;
+    }
+
+    &__list {
+        margin-bottom: 24px;
+    }
+
+    &__button {
+        width: 280px;
+        color: #fff;
+    }
+
+    @media (min-width: 650px) {
+        padding-top: 70px;
+        padding-bottom: 0;
+        background: url('/public/media/images/training-bg_mobile2.png') 0 0 no-repeat;
+        background-size: 100%;
+
+        &__title {
+            margin-bottom: 24px;
+        }
+
+        &__button {
+            width: 225px;
+        }
+
+        &__background {
+            display: block;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 1;
+            pointer-events: none;
+
+            img {
+                width: 61vw;
+                max-width: 485px;
+                height: 100%;
+                max-height: 413px;
+            }
+        }
+    }
+
+    @media (min-width: 768px) {
+
+    }
+
+    @media (min-width: 1200px) {
+        padding-top: toRem(64);
+        overflow: hidden;
+
+        &__background {
+            display: block;
+            position: absolute;
+            bottom: -(toRem(32));
+            right: toRem(66);
+            z-index: 1;
+            pointer-events: none;
+
+            img {
+                width: toRem(608);
+                max-width: none;
+                height: toRem(506);
+                max-height: none;
+            }
+        }
+
+        &__title {
+            margin-bottom: toRem(30);
+        }
+
+        &__list {
+            margin-bottom: toRem(40);
+        }
+
+        &__info {
+            font-size: toRem(16);
+            line-height: toRem(22);
+            margin-bottom: toRem(30);
+            max-width: toRem(363);
+        }
+
+        &__button {
+            width: toRem(225);
+            margin-bottom: toRem(70);
+        }
+    }
+}

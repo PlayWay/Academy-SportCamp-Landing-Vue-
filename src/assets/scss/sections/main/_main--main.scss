@@ -1,0 +1,184 @@
+.slider {
+
+    &__item {
+        opacity: 0 !important;
+
+        &.swiper-slide-active {
+            opacity: 1 !important;
+
+            .slider {
+                &__wrap {
+                    transform: translate(0,0);
+                    transition-delay: .125s;
+                }
+
+                &__title {
+                    p {
+                        transform: translate(0,0);
+                    }
+                }
+
+                &__buttons {
+                    transform: translate(0,0);
+                }
+            }
+        }
+        
+        &.swiper-slide-next,&.next {
+
+            .slider {
+
+                &__wrap {
+                    transform: translate(100%,0);
+                }
+
+                &__title {
+                    p {
+                        transform: translate(50%,0);
+                    }
+                }
+
+                &__buttons {
+                    transform: translate(50%,0);
+                }
+            }
+        }
+
+        &.swiper-slide-prev,&.prev {
+            .slider {
+                &__wrap {
+                    transform: translate(-100%,0);
+                }
+
+                &__title {
+                    p {
+                        transform: translate(-50%,0);
+                    }
+                }
+
+                &__buttons {
+                    transform: translate(-50%,0);
+                }
+            }
+        }
+
+        &.hide {
+
+            .slider {
+                &__img {
+
+                    img {
+                        opacity: 0;
+                        transform: translate(-50%,-50%) scale(1);
+                    }
+                }
+
+                &__content {
+                    transform: translate(0,0) scale(0.9);
+                    transform-origin: 50% 50%;
+                    opacity: 0;
+                }
+
+                &__title {
+                    p {
+                        transform: translate(0,0);
+                    }
+                }
+
+                &__buttons {
+                    transform: translate(0,0);
+                }
+
+                &__wrap {
+                    transform: scale(1);
+                    transform-origin: 50% 50%;
+                }
+            }
+        }
+
+        &.preventDuration {
+            .slider {
+                &__wrap {
+                    transition-duration: 0s;
+                }
+
+                &__title {
+                    p {
+                        transition-duration: 0s;
+                    }
+                }
+
+                &__buttons {
+                    transition-duration: 0s;
+                }
+            }
+        }
+
+    }
+
+    &__wrap {
+        transition: transform 1s ease;
+    }
+
+    &__content {
+        transition: 1s ease;
+        transition-property: opacity,transform;
+    }
+
+    &__title {
+        pointer-events: none;
+    }
+
+    &__title {
+        p {
+            transition: .8s cubic-bezier(0.5, 0.54, 0.13, 0.96);
+            transition-property: opacity,transform;
+
+            @for $i from 0 through 5 {
+                &:nth-child(#{$i}) {
+                    transition-delay: 0.15s + $i * 0.05s;
+                }
+            }
+        }
+    }
+
+    &__buttons {
+        transition: .8s cubic-bezier(0.5, 0.54, 0.13, 0.96);
+        transition-property: opacity,transform;
+    }
+
+    &__img {
+
+        img {
+            transition: 1s ease;
+            transition-property: opacity,transform;
+
+            transform: translate(-50%,-50%) scale(1.1);
+        }
+
+        &:before {
+            transition: opacity .3s ease;
+        }
+    }
+
+    @media (min-width: 650px) {
+
+        &__item {
+            &.hide {
+                .slider__content {
+                    transform: translate(0,-50%) scale(0.9);
+                }
+            }
+        }
+
+        &__img {
+
+            img {
+                transform: translate(-50%,-50%) scale(1.1);
+            }
+        }
+
+        &__title {
+        }
+    }
+}

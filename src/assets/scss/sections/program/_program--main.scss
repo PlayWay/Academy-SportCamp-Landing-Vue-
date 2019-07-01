@@ -1,0 +1,22 @@
+.program {
+    
+    &__block {
+        opacity: 0;
+        transition: .4s;
+        transition-property: opacity,transform;
+
+        &.active {
+            transition-timing-function: cubic-bezier(0.21, 0.83, 0.57, 0.97);
+        }
+        
+        &.next {
+            transform: translate(-50px,0);
+            transition-timing-function: cubic-bezier(0.82, 0.23, 0.87, 0.92);
+        }
+
+        &.prev {
+            transform: translate(50px,0);
+            transition-timing-function: cubic-bezier(0.82, 0.23, 0.87, 0.92);
+        }
+    }
+}
